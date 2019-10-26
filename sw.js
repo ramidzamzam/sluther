@@ -22,23 +22,13 @@ self.addEventListener('fetch', (event) => {
     if (config.debug) console.log("Event: ", event)
     if (event.request.mode !== 'no-cors' || config.crossOrigin) {
         //Skip non-cross origin requests if not configured on
-        //Parse request
-        event.request.body
-        event.request.url
-        event.request.method
+        fetch(event.request).then((response) => {
+            //Get request and response
+            let req = event.request
 
-        let request = {
-            method: 'POST',
-            date: '12-02-2019 04:08:33',
-            duration: '1243',
-            status: '200',
-            mimeType: 'application/json',
-            url: '',
-            requestBody: {},
-            responseBody: {}
 
-        }
-
+            return response
+        })
     }
 
 })
