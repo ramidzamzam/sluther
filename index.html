@@ -3,9 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Test Sluther</title>
-    <script> src="sluther.js"</script>
 </head>
 <body>
-    <h1>Hell Sluther</h1>
+<h1>Hello Sluther</h1>
+<script src="./sluther.js"></script>
+<script>
+    (function () {
+        //Test Sluther
+        fetch('/user', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                user: {
+                    name: "John",
+                    email: "john@example.com"
+                }
+            })
+        })
+
+    })()
+</script>
 </body>
 </html>
